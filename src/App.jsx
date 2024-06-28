@@ -1,25 +1,31 @@
-import { Canvas } from "@react-three/fiber"
-import { Environment } from "@react-three/drei"
+import React from "react"
+import ObjectUVs from "./components/ObjectUVs"
+import GeneratedUVs from "./components/GeneratedUVs"
+import SphericalUVs from "./components/SphericalUVs"
+import ScreenSpaceUVs from "./components/ScreenSpaceUVs"
+import ClipSpaceUVs from "./components/ClipSpaceUVs"
+import WorldSpaceUVs from "./components/WorldSpaceUVs"
+import LocalStabilizedScreenSpaceUVs from "./components/LocalScreenSpaceUVs"
+import CylindricalUVs from "./components/CylindricalUVs"
+import TriplanarUVs from "./components/TriplanarUVs"
+import TilingUVs from "./components/TilingUVs"
 
-import './index.css'
-
-import Experience from "./Experience"
-
-
-export default function App() {
-
- return (
-
-  
-    <Canvas shadows camera={{ position: [0, 0, 4], fov: 40 }}>
-      <Environment
-        files="./textures/envmap.hdr" />
-        <color 
-          attach="background" 
-          args={["#eeeeee"]} />
-      <Experience />
-    </Canvas>
-  
-  );
+const App = () => {
+  return (
+    <div>
+      <h1>Three.js UVs</h1>
+      <ObjectUVs />
+      <GeneratedUVs />
+      <SphericalUVs />
+      <ScreenSpaceUVs />
+      <ClipSpaceUVs />
+      <WorldSpaceUVs />
+      <LocalStabilizedScreenSpaceUVs />
+      <CylindricalUVs />
+      <TriplanarUVs />
+      <TilingUVs />
+    </div>
+  )
 }
 
+export default App
